@@ -1,7 +1,8 @@
 def call(Map config){
   def var1 = config.var1
-  printenv
+  print (config)
   sh '''
+  printenv
   cat << EOF > pythonfile.py
 print ("""""""")
 print ("var1 : " + ${var1})
