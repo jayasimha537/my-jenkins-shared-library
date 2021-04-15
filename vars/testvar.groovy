@@ -5,7 +5,7 @@ def call(Map config){
   printenv
   cat << EOF > pythonfile.py
 print ("""""""")
-print ("var1 : " + ${var1})
+print ("var1 : " + "${var1}")
 print ("""""""")
 EOF
   python pythonfile.py
