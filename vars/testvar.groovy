@@ -1,5 +1,5 @@
 def call(Map config){
-  def var1 = config.var1
+  env.var1 = config.var1
   print (config)
   sh '''
   printenv
