@@ -5,7 +5,7 @@ def call(Map config){
   print ("""""""")
   print ("var1 : " + ${var1})
   print ("""""""")
-  EOF
+EOF
   python pythonfile.py
   '''
 }
