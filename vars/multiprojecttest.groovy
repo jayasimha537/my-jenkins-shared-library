@@ -14,17 +14,24 @@ def call(Map params){
           
             steps {
               script {
-              if (params.name == 'Jay'){
-                echo 'Testing.. Jay'
-              } else if (params.name == 'Jayasimha'){
-              echo 'Testing.. Jayasimha'
+              if (${JOB_NAME} == 'test1'){
+                echo 'Testing.. tes1project'
+              } else if (${JOB_NAME} == 'sidsdsas'){
+              echo 'Testing.. otherprject'
               }
             }
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+              script {
+                if (${JOB_NAME} == 'test1'){
+                echo 'Deploying .. tes1project'
+              } else if (${JOB_NAME} == 'sidsdsas'){
+              echo 'Deploying .. otherprject'
+              }
+            }
+         
             }
         }
     }
