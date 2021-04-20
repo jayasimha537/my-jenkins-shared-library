@@ -13,11 +13,21 @@ def call(Map params){
             }
         }
         stage('Test') {
+          when {
+              expression {
+                params.name == 'Jay' 
+              }
+            }
             steps {
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
+          when {
+              expression {
+                params.name == 'Jayasimha' 
+              }
+            }
             steps {
                 echo 'Deploying....'
             }
