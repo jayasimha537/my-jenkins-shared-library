@@ -16,11 +16,13 @@ def call(Map params){
         stage('Test') {
           
             steps {
+              script {
               if (params.name == 'Jay'){
                 echo 'Testing.. Jay'
               } else if (params.name == 'Jayasimha'){
               echo 'Testing.. Jayasimha'
               }
+            }
             }
         }
         stage('Deploy') {
