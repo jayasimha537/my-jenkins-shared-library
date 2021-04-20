@@ -1,10 +1,11 @@
 def call(Map params){
 
   pipeline {
-    agent any
+    agent none
 
     stages {
         stage('Build') {
+          agent { label params.agentName}
             steps {
               echo 'Building..'
               sh'''
@@ -13,6 +14,7 @@ def call(Map params){
             }
         }
         stage('Test') {
+          agent { label params.agentName}
           when {
               expression {
                 params.name == 'Jay' 
@@ -23,6 +25,7 @@ def call(Map params){
             }
         }
         stage('Deploy') {
+          agent { label params.agentName}
           when {
               expression {
                 params.name == 'Jayasimha' 
