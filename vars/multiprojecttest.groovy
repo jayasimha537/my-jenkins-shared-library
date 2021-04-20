@@ -14,9 +14,9 @@ def call(Map params){
           
             steps {
               script {
-              if (env.JOB_NAME == 'test1'){
+              if (params.projectName == 'test1'){
                 echo 'Testing.. tes1project'
-              } else if (env.JOB_NAME == 'sidsdsas'){
+              } else if (params.projectName == 'sidsdsas'){
               echo 'Testing.. otherprject'
               }
             }
@@ -25,9 +25,9 @@ def call(Map params){
         stage('Deploy') {
             steps {
               script {
-                if (env.JOB_NAME == 'test1'){
+                if (params.projectName == 'test1'){
                 echo 'Deploying .. tes1project'
-              } else if (env.JOB_NAME == 'sidsdsas'){
+              } else if (params.projectName == 'sidsdsas'){
               echo 'Deploying .. otherprject'
               }
             }
