@@ -15,22 +15,15 @@ def call(Map params){
         }
         stage('Test') {
           
-          when {
-              expression {
-                params.name == 'Jay' 
-              }
-            }
             steps {
-                echo 'Testing..'
+              if (params.name == 'Jay'){
+                echo 'Testing.. Jay'
+              } else if (params.name == 'Jayasimha'){
+              echo 'Testing.. Jayasimha'
+              }
             }
         }
         stage('Deploy') {
-          
-          when {
-              expression {
-                params.name == 'Jayasimha' 
-              }
-            }
             steps {
                 echo 'Deploying....'
             }
