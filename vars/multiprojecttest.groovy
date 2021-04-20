@@ -8,9 +8,6 @@ def call(Map params){
           
             steps {
               echo 'Building..'
-              sh'''
-                printenv
-              '''
             }
         }
         stage('Test') {
