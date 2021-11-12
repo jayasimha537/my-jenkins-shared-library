@@ -1,12 +1,16 @@
 #!/usr/bin/env groovy
 def call(Map params){
+  def FinalProjectName = "FromSharedLib"
+  if (params.projectName != null){
+    FinalProjectName = params.projectName
+  }
   pipeline{
     agent any
     
     stages{
       stage("First Stage") {
         steps{
-          echo params.projectName
+          echo FinalProjectName
           echo "Hai Jay"
         }
       }
