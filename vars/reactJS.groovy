@@ -6,7 +6,7 @@ def call(Map params){
     stages{
       stage("First Stage") {
         steps{
-          
+          echo params.projectName
           echo "Hai Jay"
         }
       }
