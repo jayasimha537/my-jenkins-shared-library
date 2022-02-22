@@ -16,7 +16,7 @@ def call(Map params){
       }
       stage("Param Condition"){
         steps{
-        
+          script{
           if (params.CustomPath != null){
             echo "CustomPath var is not null"
             echo "Outside dir block -2 "
@@ -38,7 +38,7 @@ def call(Map params){
             echo "CustomPath var is null"
             sh "pwd"
           }
-        
+          }
         }
       }
     }
